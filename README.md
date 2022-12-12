@@ -1,6 +1,10 @@
 # flux-mini-fdm-akash
 SDL to deploy a Flux Mini Domain Management Instance For Any Flux App (Load Balancer)
 
+Flux makes it easy to spawn a large number of instances for your docker applications. 
+
+This docker image allows you to self host a load balancer and automatically update it with all of the instances of your deployed Flux app. (Docker application)
+
 # Instructions
 
 ```/etc/letsencrypt``` is persisted to store generated certs
