@@ -1,4 +1,7 @@
 # flux-mini-fdm-akash
+
+Credit: https://github.com/RunOnFlux/flux-mini-fdm
+
 SDL to deploy a Flux Mini Domain Management Instance For Any Flux App (Load Balancer) onto the Akash Network
 
 Flux makes it easy to spawn a large number of instances for your docker applications. 
