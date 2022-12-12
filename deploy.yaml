@@ -1,0 +1,58 @@
+---
+version: '2.0'
+endpoints:
+ fdmep1111:#Must be unique per deployment#
+   kind: ip
+services:
+  fdm:
+    image: 'alihmahdavi/flux-mini-fdm:latest'
+    expose:
+      - port: 80
+        as: 80
+        to:
+          - global: true
+            ip: fdmep1111 #Must match endpoints directive#
+      - port: 443
+        as: 443
+        to:
+          - global: true
+            ip: fdmep1
+    env:   #IMPORTANT# do not add enviornment variables on initial deploy, you will need to update the deployment with the variables once you have set the proper DNS record to point your domain to the akash deployment.
+      - APP_NAME=flux-app-name 
+      - APP_PORT=flux-app-port
+      - STAGING=false
+      - DOMAIN=your.domain.xyz
+      - EMAIL=your@private.email
+    params:
+      storage:
+        data:
+          mount: /etc/letsencrypt
+          readOnly: false
+profiles:
+  compute:
+    fdm:
+      resources: #can be changed as needed#
+        cpu:
+          units: 2
+        memory:
+          size: 4GB
+        storage:
+          - size: 1Gi
+          - name: data
+            size: 10Gi
+            attributes:
+              persistent: true
+              class: beta3
+  placement:
+    dcloud:
+      attributes:
+      ip-lease: true
+      pricing:
+        fdm:
+          denom: uakt
+          amount: 1000
+deployment:
+  fdm:
+    dcloud:
+      profile: fdm
+      count: 1
