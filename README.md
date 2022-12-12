@@ -3,7 +3,7 @@ SDL to deploy a Flux Mini Domain Management Instance For Any Flux App (Load Bala
 
 Flux makes it easy to spawn a large number of instances for your docker applications. 
 
-This docker image allows you to self host a load balancer and automatically update it with all of the instances of your deployed Flux app. (Docker application)
+This docker image and SDL combo allows you to self host a load balancer on Akash and automatically update it with all of the instances of your deployed Flux app.
 
 # Instructions
 
