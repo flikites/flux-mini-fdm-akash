@@ -7,6 +7,7 @@ SDL to deploy a Flux Mini Domain Management Instance For Any Flux App (Load Bala
 
 Enviornment Variables must be added to the SDL only after the Akash deployment has succeeded and you have obtained the leased IP for the instance. 
 
+# Important 
 You must set the DNS 'A' record for you domain and point it to the leased IP before proceeding to update the deployment with the enviornment variables.
 
        APP_NAME=my-flux-app-name 
