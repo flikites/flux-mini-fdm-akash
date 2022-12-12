@@ -9,11 +9,11 @@ Enviornment Variables must be added to the SDL only after the Akash deployment h
 
 You must set the DNS 'A' record for you domain and point it to the leased IP before proceeding to update the deployment with the enviornment variables.
 
-       ```APP_NAME=my-flux-app-name 
+       APP_NAME=my-flux-app-name 
        APP_PORT=my-flux-app-port 
        DOMAIN=my.domain 
        EMAIL=my.email@my.domain 
-       STAGING=false ```
+       STAGING=false
 
 # Set up your own Flux App
 
