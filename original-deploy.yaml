@@ -1,7 +1,8 @@
 ---
 version: '2.0'
 endpoints:
- fdmep1111:#Must be unique per deployment#
+ fdmep1111: 
+ #Must be unique per deployment
    kind: ip
 services:
   fdm:
@@ -11,13 +12,15 @@ services:
         as: 80
         to:
           - global: true
-            ip: fdmep1111 #Must match endpoints directive#
+            ip: fdmep1111 
+            #Must match endpoints directive
       - port: 443
         as: 443
         to:
           - global: true
             ip: fdmep1
-    env:   #IMPORTANT# do not add enviornment variables on initial deploy, you will need to update the deployment with the variables once you have set the proper DNS record to point your domain to the akash deployment.
+    env:   
+    #IMPORTANT# do not add enviornment variables on initial deploy, you will need to update the deployment with the variables once you have set the proper DNS record to point your domain to the akash deployment.
       - APP_NAME=flux-app-name 
       - APP_PORT=flux-app-port
       - STAGING=false
@@ -31,7 +34,8 @@ services:
 profiles:
   compute:
     fdm:
-      resources: #can be changed as needed#
+      resources: 
+      #can be changed as needed#
         cpu:
           units: 2
         memory:
