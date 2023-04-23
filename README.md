@@ -6,9 +6,27 @@ SDL to deploy a Flux Mini Domain Management Instance For Any Flux App (Load Bala
 
 Flux makes it easy to spawn a large number of instances for your docker applications. 
 
+# Instructions for Handshake x Varo Version: 
+
+Example Enviornment Variables: (Change APP_NAME and APP_PORT, and specify your Varo API key.)
+
+For a full list of options and configurations please see the original repo: 
+
+https://github.com/FliKites/flux-mini-fdm/tree/nginx
+
+```
+     - CERT=self
+     - APP_NAME=ipify
+     - APP_PORT=39443
+     - DOMAIN=ipify.fluxos
+     - DNS_SERVER_ADDRESS=https://varo.domains/api
+     - DNS_SERVER_API_KEY=<your-api-key>
+     - FRONTEND_HEALTH_INTERVAL=10
+     - BACKEND_HEALTH_INTERVAL=60
+```
 This docker image and SDL combo allows you to self host a load balancer on Akash and automatically update it with all of the instances of your deployed Flux app.
 
-# Instructions
+# Instructions for `orginal-deploy.yaml`
 
 ```/etc/letsencrypt``` is persisted to store generated certs
 
